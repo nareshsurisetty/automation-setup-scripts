@@ -28,7 +28,8 @@ azure-mgmt-storage==16.0.0
 azure-mgmt-trafficmanager==0.51.0
 azure-mgmt-web==0.48.0
 azure-nspkg==3.0.2
-azure-storage==0.37.0
+azure-storage-blob==12.5.0
+azure-storage-file-share==12.2.0
 msrest==0.6.19
 msrestazure==0.6.4
 azure-keyvault==4.1.0
