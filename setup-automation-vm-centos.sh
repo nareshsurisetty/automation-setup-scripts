@@ -22,8 +22,8 @@ function ansible-install() {
     [[ $(which ansible-playbook) ]] && echo "$(ansible-playbook --version)" && echo "ansible-playbook already installed at $(which ansible-playbook)" && return 0
     if [ ! "$(which ansible-playbook)" ]; then
         if [ -f /etc/centos-release ] || [ -f /etc/redhat-release ] || [ -f /etc/oracle-release ] || [ -f /etc/system-release ]; then
-            [ ! -n "$(grep ':8' /etc/system-release-cpe)" ] && yum -y install libselinux-python python-devel MySQL-python python-paramiko
-            [ -n "$(grep ':8' /etc/system-release-cpe)" ] && yum -y install python36-devel python3-PyMySQL python3-pip python3-paramiko
+            [ ! -n "$(grep ':8' /etc/system-release-cpe)" ] && yum -y install libselinux-python gcc python-devel MySQL-python python-paramiko
+            [ -n "$(grep ':8' /etc/system-release-cpe)" ] && yum -y install gccpython36-devel python3-PyMySQL python3-pip python3-paramiko
             pip3 install ansible[azure]
             ansible-galaxy collection install azure.azcollection
             wget https://raw.githubusercontent.com/nareshsurisetty/automation-setup-scripts/master/ansible-requirements.txt
